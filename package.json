@@ -1,0 +1,25 @@
+{
+  "name": "stump-router",
+  "version": "v0.1.0",
+  "description": "URL router for Stump",
+  "main": "router.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmontoya/stump-router.git"
+  },
+  "keywords": [
+    "stump"
+  ],
+  "author": "itsMontoya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsmontoya/stump-router/issues"
+  },
+  "homepage": "https://github.com/itsmontoya/stump-router#readme",
+  "dependencies": {
+    "stump": "github:itsmontoya/stump#v0.1.4"
+  }
+}
