@@ -1,9 +1,8 @@
 import { Lookup } from "./lookupTable.js";
 import { Route } from "./route.js";
 import { getURLParts } from "./url.js";
-import { action, event } from "stump";
+import { action, event, dispatcher } from "stump";
 
-console.log("Route state init")
 let routesState = [],
 	routesByName = {};
 
@@ -12,8 +11,6 @@ export function getRouteByName(name) {
 }
 
 export function getRouteMatch(url) {
-	console.log("Getting route match for", url);
-	console.log("state?", routesState);
 	const parts = getURLParts(url);
 	let match = null;
 	routesState.some(route => {
@@ -32,25 +29,25 @@ export function setRoutes(routes) {
 	routesByName = Lookup(prepared, "name");
 	// Assign prepared to r
 	routesState = prepared;
-	console.log("state set!", routesState);
 }
 
-export const pushURL = options => event((evt, dispatch) => {
-	console.log("PUSH URL!", options);
-	console.log("About to dispatch URL!", evt, dispatch, options)
-	dispatchURL(options)(dispatch);
-})
+export const pushURL = options =>
+	event((_, dispatch) =>
+		dispatchURL(options)(dispatch))
 
 export const dispatchURL = ({ title = "", url = "" }) => dispatch => {
 	history.pushState({}, title, url);
 	dispatch(setCurrentRoute);
 };
 
+export const dispatchCurrentRoute = dispatcher(dispatch =>
+	dispatch(setCurrentRoute));
+
 export const setRoute = match =>
 	action(state =>
 		setMatch(state, match));
 
-export const setCurrentRoute = action(state => {
+export const setCurrentRoute = state => {
 	// Set path as current location path
 	const path = document.location.pathname
 	// Get route match for current path
@@ -63,7 +60,7 @@ export const setCurrentRoute = action(state => {
 	}
 
 	return setMatch(state, match);
-});
+}
 
 const setMatch = (state, match) => ({
 	...state,
