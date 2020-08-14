@@ -1,6 +1,6 @@
 {
   "name": "stump-router",
-  "version": "v0.2.3",
+  "version": "v0.2.4",
   "description": "URL router for Stump",
   "main": "router.js",
   "scripts": {
