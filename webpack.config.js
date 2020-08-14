@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 	entry: './router.ts',
-	mode: "development",
+	mode: "production",
 	watch: true,
 	module: {
 		rules: [
