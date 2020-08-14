@@ -1,6 +1,6 @@
 {
   "name": "stump-router",
-  "version": "v0.2.5",
+  "version": "v0.2.6",
   "description": "URL router for Stump",
   "main": "router.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/itsmontoya/stump-router#readme",
   "dependencies": {
-    "stump": "github:itsmontoya/stump#v0.2.7"
+    "stump": "github:itsmontoya/stump#v0.2.8"
   },
   "devDependencies": {
     "ts-loader": "^8.0.2",
