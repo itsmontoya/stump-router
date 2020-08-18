@@ -1,6 +1,6 @@
 {
   "name": "stump-router",
-  "version": "v0.2.9",
+  "version": "v0.2.10",
   "description": "URL router for Stump",
   "main": "lib/router.js",
   "types": "lib/router.d.ts",
@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "ts-loader": "^8.0.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }
