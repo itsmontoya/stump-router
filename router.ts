@@ -1,7 +1,7 @@
 import { lookup } from "./lookupTable";
-import { route, match, getMatch } from "./route";
+import { newRoute, route, match, getMatch } from "./route";
 import { getURLParts } from "./url";
-import { state, action, dispatch, dispatcher } from "stump";
+import { state, action, dispatch } from "stump";
 
 let routesState: route[] = [],
 	routesByName: { [key: string]: route } = {};
@@ -15,13 +15,13 @@ export function getRouteByName(name: string): route | undefined {
 	return routesByName[name]
 }
 
-export function getRouteMatch(url: string): match | undefined {
+export function getRouteMatch(url: string): match | null {
 	const parts = getURLParts(url);
 	let match = null;
 	routesState.some(route => {
 		match = getMatch(route, parts);
 		return match != null;
-	})
+	});
 
 	return match;
 }
@@ -30,7 +30,7 @@ export function setRoutes(routes: route[]) {
 	const prepared: route[] = [];
 	// Set parts for each route
 	routes.forEach((r: route) =>
-		prepared.push({ ...r }));
+		prepared.push(newRoute(r)));
 
 	// Assign new lookup table to name lookup
 	routesByName = lookup(prepared);
@@ -48,8 +48,8 @@ export const dispatchURL = ({ title = "", url = "" }) =>
 		dispatch(setCurrentRoute);
 	};
 
-export const dispatchCurrentRoute = dispatcher(dispatch =>
-	dispatch(setCurrentRoute));
+export const dispatchCurrentRoute = (dispatch: dispatch) =>
+	dispatch(setCurrentRoute);
 
 export const setRoute = (match: match) =>
 	action(state =>
