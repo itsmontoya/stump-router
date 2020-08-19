@@ -2,7 +2,7 @@
   "name": "stump-router",
   "version": "v0.2.11",
   "description": "URL router for Stump",
-  "main": "lib/router.js",
+  "main": "router.ts",
   "types": "lib/router.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
