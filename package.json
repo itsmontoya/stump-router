@@ -1,6 +1,6 @@
 {
   "name": "stump-router",
-  "version": "v0.2.11",
+  "version": "v0.2.13",
   "description": "URL router for Stump",
   "main": "router.ts",
   "types": "lib/router.d.ts",
