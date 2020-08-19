@@ -52,7 +52,7 @@ export const dispatchCurrentRoute = (dispatch: dispatch) =>
 	dispatch(setCurrentRoute);
 
 export const setRoute = (match: match) =>
-	action(state =>
+	action((state: state) =>
 		setMatch(state, match));
 
 export const setCurrentRoute = (state: state) => {
