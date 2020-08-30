@@ -1,6 +1,6 @@
 {
   "name": "stump-router",
-  "version": "v0.3.2",
+  "version": "v0.3.3",
   "description": "URL router for Stump",
   "main": "dist/router.min.js",
   "types": "dist/router.d.ts",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/stump-ui/stump-router#readme",
   "dependencies": {
-    "stump": "github:stump-ui/stump#v0.3.0"
+    "stump": "github:stump-ui/stump#v0.3.1"
   },
   "devDependencies": {
     "ts-loader": "^8.0.2",
