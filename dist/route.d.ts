@@ -5,7 +5,7 @@ export declare type route = {
     title: string;
     name: string;
     url: string;
-    onMatch: response;
+    onMatch: response | undefined;
     component: any;
     parts?: string[];
 };
