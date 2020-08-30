@@ -14,8 +14,5 @@ export declare const dispatchURL: ({ title, url }: {
 }) => (dispatch: dispatch) => void;
 export declare const dispatchCurrentRoute: (dispatch: dispatch) => void;
 export declare const setRoute: (match: match) => (event: Event, dispatch: dispatch) => void;
-export declare const setCurrentRoute: (state: state) => {
-    currentRoute: route;
-    currentParams: import("./url").params;
-};
+export declare const setCurrentRoute: (state: state) => state;
 export {};

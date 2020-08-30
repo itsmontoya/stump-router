@@ -1,9 +1,12 @@
 import { params, getURLParts, getParams } from "./url"
+import { response } from "stump"
 
 export const newRoute = (r: route): route => ({
-	title: r.title,
-	name: r.name,
+	...r,
+	title: r.title || "",
+	name: r.name || "",
 	url: r.url,
+	onMatch: r.onMatch,
 	component: r.component,
 	parts: getURLParts(r.url),
 });
@@ -12,6 +15,7 @@ export type route = {
 	title: string,
 	name: string,
 	url: string,
+	onMatch: response,
 	component: any,
 	parts?: string[]
 }

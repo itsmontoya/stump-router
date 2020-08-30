@@ -1,6 +1,6 @@
 {
   "name": "stump-router",
-  "version": "v0.3.1",
+  "version": "v0.3.2",
   "description": "URL router for Stump",
   "main": "dist/router.min.js",
   "types": "dist/router.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itsmontoya/stump-router.git"
+    "url": "git+https://github.com/stump-ui/stump-router.git"
   },
   "keywords": [
     "stump"
@@ -17,11 +17,11 @@
   "author": "itsMontoya",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/itsmontoya/stump-router/issues"
+    "url": "https://github.com/stump-ui/stump-router/issues"
   },
-  "homepage": "https://github.com/itsmontoya/stump-router#readme",
+  "homepage": "https://github.com/stump-ui/stump-router#readme",
   "dependencies": {
-    "stump": "github:itsmontoya/stump#v0.3.0"
+    "stump": "github:stump-ui/stump#v0.3.0"
   },
   "devDependencies": {
     "ts-loader": "^8.0.2",

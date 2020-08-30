@@ -41,7 +41,12 @@ export const setCurrentRoute = (state) => {
         // Route match not found, throw error
         throw (`404: cannot find route match for ${path}`);
     }
-    return setMatch(state, match);
+    const newState = setMatch(state, match);
+    const onMatch = match.route.onMatch;
+    if (!!onMatch) {
+        return onMatch(newState);
+    }
+    return newState;
 };
 const setMatch = (state, match) => (Object.assign(Object.assign({}, state), { currentRoute: match.route, currentParams: match.params }));
 //# sourceMappingURL=router.js.map

@@ -1,9 +1,11 @@
 import { params } from "./url";
+import { response } from "stump";
 export declare const newRoute: (r: route) => route;
 export declare type route = {
     title: string;
     name: string;
     url: string;
+    onMatch: response;
     component: any;
     parts?: string[];
 };

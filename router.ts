@@ -67,7 +67,13 @@ export const setCurrentRoute = (state: state) => {
 		throw (`404: cannot find route match for ${path}`)
 	}
 
-	return setMatch(state, match);
+	const newState = setMatch(state, match);
+	const onMatch = match.route.onMatch;
+	if (!!onMatch) {
+		return onMatch(newState);
+	}
+
+	return newState;
 }
 
 const setMatch = (state: state, match: match) => ({
