@@ -15,7 +15,7 @@ export type route = {
 	title: string,
 	name: string,
 	url: string,
-	onMatch: response | undefined,
+	onMatch?: response,
 	component: any,
 	parts?: string[]
 }
